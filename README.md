@@ -1,2 +1,9 @@
 # maru_batu_ts
-まるばつゲームをTypeScriptで制作する。
+
+まるばつゲームを TypeScript で制作する。
+
+## install
+
+```
+yarn install
+```
