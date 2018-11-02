@@ -29,4 +29,13 @@ describe("Board class", () => {
       expect(Board.posToIndex(0, 2)).toBe(6);
     });
   });
+  describe("indexToPos", () => {
+    test("4 =>(1, 1)", () => {
+      expect(Board.indexToPos(4)).toEqual([1, 1]);
+    });
+    test("6 =>(0, 2)", () => {
+      expect(Board.indexToPos(6)).toEqual([0, 2]);
+    });
+  });
+
 });
