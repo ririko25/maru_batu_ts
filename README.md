@@ -4,6 +4,16 @@
 
 ## install
 
-```
+```sh
 yarn install
 ```
+
+## test
+
+```sh
+yarn test
+```
+
+## まるばつボードの考え方
+
+![まるばつゲームのボードの考え方](images/sk.jpg)
