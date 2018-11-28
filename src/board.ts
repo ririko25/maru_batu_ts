@@ -52,6 +52,9 @@ export class Board {
   }
 
   /* ------- instance method -------  */
+  public toString(): string {
+    return this.cells.join("");
+  }
 }
 
 // enum とは 特定の値しか入らない値型 を新しい型として作成する
