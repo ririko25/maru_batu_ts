@@ -76,4 +76,13 @@ describe("Board class", () => {
       ]);
     });
   });
+
+  describe("#toString", () => {
+    test("Board => 'ooox-x---'", () => {
+      expect(Board.parse("ooox-x---").toString()).toEqual("ooox-x---");
+    });
+    test("new Board => '---------'", () => {
+      expect(new Board().toString()).toEqual("---------");
+    });
+  });
 });
