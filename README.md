@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/ririko25/maru_batu_ts.svg?branch=master)](https://travis-ci.com/ririko25/maru_batu_ts)
+
 # maru_batu_ts
 
 まるばつゲームを TypeScript で制作する。
