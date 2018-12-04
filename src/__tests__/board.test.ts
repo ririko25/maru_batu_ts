@@ -85,7 +85,6 @@ describe("Board class", () => {
       expect(new Board().toString()).toEqual("---------");
     });
   });
-<<<<<<< HEAD
 
   describe("#win", () => {
     test("まっさらな Board は win(CellValue.Maru) すると falseになる", () => {
@@ -107,6 +106,4 @@ describe("Board class", () => {
       expect(Board.parse("x--ox-o-x").win(CellValue.Batu)).toEqual(true);
     });
   });
-=======
->>>>>>> 4248e7c2c0b45bbe95c15ff51dd14cba6cad3262
 });
