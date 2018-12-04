@@ -85,4 +85,25 @@ describe("Board class", () => {
       expect(new Board().toString()).toEqual("---------");
     });
   });
+
+  describe("#win", () => {
+    test("まっさらな Board は win(CellValue.Maru) すると falseになる", () => {
+      expect(new Board().win(CellValue.Maru)).toBe(false);
+    });
+    test("Boardの状態がooo----xxだった時マルがwin", () => {
+      expect(Board.parse("ooo----xx").win(CellValue.Maru)).toEqual(true);
+    });
+    test("Boardの状態がooo----xxだった時バツがloose", () => {
+      expect(Board.parse("ooo----xx").win(CellValue.Batu)).toEqual(false);
+    });
+    test("Boardの状態がo--xo-x-oだった時マルがwin", () => {
+      expect(Board.parse("o--xo-x-o").win(CellValue.Maru)).toEqual(true);
+    });
+    test("Boardの状態がxxx----ooだった時バツがwin", () => {
+      expect(Board.parse("xxx----oo").win(CellValue.Batu)).toEqual(true);
+    });
+    test("Boardの状態がx--ox-o-xだった時バツがwin", () => {
+      expect(Board.parse("x--ox-o-x").win(CellValue.Batu)).toEqual(true);
+    });
+  });
 });

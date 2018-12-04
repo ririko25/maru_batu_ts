@@ -6,7 +6,7 @@
   "author": "ririko <ririkokanikama25@yahoo.co.jp>",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "tslib": "^1.9.3"

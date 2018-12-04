@@ -55,6 +55,20 @@ export class Board {
   public toString(): string {
     return this.cells.join("");
   }
+
+  public win(o: CellValue): boolean {
+    const list = [
+      { i1: 0, i2: 1, i3: 2 },
+      { i1: 3, i2: 4, i3: 5 },
+      { i1: 6, i2: 7, i3: 8 },
+      { i1: 0, i2: 3, i3: 6 },
+      { i1: 1, i2: 4, i3: 7 },
+      { i1: 2, i2: 5, i3: 8 },
+      { i1: 0, i2: 4, i3: 8 },
+      { i1: 2, i2: 4, i3: 6 },
+    ];
+    return list.some((v) => this.cells[v.i1] === o && this.cells[v.i2] === o && this.cells[v.i3] === o);
+  }
 }
 
 // enum とは 特定の値しか入らない値型 を新しい型として作成する
