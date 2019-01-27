@@ -69,6 +69,14 @@ export class Board {
     ];
     return list.some((v) => this.cells[v.i1] === o && this.cells[v.i2] === o && this.cells[v.i3] === o);
   }
+
+  public draw(): boolean {
+    return !this.cells.find((v) => v === CellValue.Kara) && !this.win(CellValue.Maru) && !this.win(CellValue.Batu);
+  }
+
+  public end(): boolean {
+    return this.draw() || this.win(CellValue.Maru) || this.win(CellValue.Batu);
+  }
 }
 
 // enum とは 特定の値しか入らない値型 を新しい型として作成する

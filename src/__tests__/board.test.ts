@@ -106,4 +106,19 @@ describe("Board class", () => {
       expect(Board.parse("x--ox-o-x").win(CellValue.Batu)).toEqual(true);
     });
   });
+
+  describe("#draw", () => {
+    test("Boardの状態がxoxoxooxoだったらtrue", () => {
+      expect(Board.parse("xoxoxooxo").draw()).toEqual(true);
+    });
+  });
+
+  describe("#end", () => {
+    test("Boardの状態がooo----xxだったらtrue", () => {
+      expect(Board.parse("ooo----xx").end()).toEqual(true);
+    });
+    test("Boardの状態がx-------oだったらfalse", () => {
+      expect(Board.parse("x-------o").end()).toEqual(false);
+    });
+  });
 });
