@@ -111,6 +111,15 @@ describe("Board class", () => {
     test("Boardの状態がxoxoxooxoだったらtrue", () => {
       expect(Board.parse("xoxoxooxo").draw()).toEqual(true);
     });
+    test("Boardの状態がoxoxooxoxだったらtrue", () => {
+      expect(Board.parse("xoxoxooxo").draw()).toEqual(true);
+    });
+    test("Boardの状態がooo----xxだったらfalse", () => {
+      expect(Board.parse("ooo----xx").draw()).toEqual(false);
+    });
+    test("Boardの状態がxxx----ooだったらfalse", () => {
+      expect(Board.parse("xxx----oo").draw()).toEqual(false);
+    });
   });
 
   describe("#end", () => {
