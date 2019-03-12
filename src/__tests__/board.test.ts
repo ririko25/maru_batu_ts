@@ -130,4 +130,17 @@ describe("Board class", () => {
       expect(Board.parse("x-------o").end()).toEqual(false);
     });
   });
+
+  describe("#play", () => {
+    test("newBoardに対して(1,1)を渡すと----o----になる", () => {
+      expect(Board.parse("---------").play(1, 1)).toEqual(Board.parse("----o----"));
+    });
+    test("newBoardに対して(1,1), (0,0)を渡すとx---o----になる", () => {
+      expect(
+        Board.parse("---------")
+          .play(1, 1)
+          .play(0, 0),
+      ).toEqual(Board.parse("x---o----"));
+    });
+  });
 });

@@ -11,8 +11,8 @@ export class Board {
 
   /**
    *2次元配列を1次元配列に変換する。
-   * @param x x座標
-   * @param y y座標
+   * @param x x座標 値は0〜2
+   * @param y y座標 値は0〜2
    */
   public static posToIndex(x: number, y: number): number {
     return x + y * 3;
@@ -20,7 +20,7 @@ export class Board {
 
   /**
    *1次元配列を2次元配列に変換する。
-   * @param i 1次元配列の値
+   * @param i 1次元配列の値 値は0〜8
    */
   public static indexToPos(i: number): [number, number] {
     const y = Math.floor(i / 3);
@@ -76,6 +76,15 @@ export class Board {
 
   public end(): boolean {
     return this.draw() || this.win(CellValue.Maru) || this.win(CellValue.Batu);
+  }
+
+  public play(x: number, y: number): Board {
+    // karaCountは奇数偶数でどちらの手番かを判定するためのやつ　偶数=バツ
+    const karaCount = this.cells.filter((v) => v === CellValue.Kara).length;
+    const turn = karaCount % 2 === 0 ? CellValue.Batu : CellValue.Maru;
+    const i = Board.posToIndex(x, y);
+    this.cells[i] = turn;
+    return this;
   }
 }
 
