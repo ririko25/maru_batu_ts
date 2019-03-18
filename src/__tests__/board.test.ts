@@ -142,5 +142,12 @@ describe("Board class", () => {
           .play(0, 0),
       ).toEqual(Board.parse("x---o----"));
     });
+    test("newBoardに対して(0,0),(0,0)を渡すとerrorになる", () => {
+      expect(() =>
+        Board.parse("---------")
+          .play(0, 0)
+          .play(0, 0),
+      ).toThrowError("");
+    });
   });
 });

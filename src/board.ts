@@ -83,6 +83,9 @@ export class Board {
     const karaCount = this.cells.filter((v) => v === CellValue.Kara).length;
     const turn = karaCount % 2 === 0 ? CellValue.Batu : CellValue.Maru;
     const i = Board.posToIndex(x, y);
+    if (this.cells[i] === CellValue.Maru || this.cells[i] === CellValue.Batu) {
+      throw new Error("まるでもばつでもからでもないよ");
+    }
     this.cells[i] = turn;
     return this;
   }
