@@ -1,13 +1,18 @@
 {
-  "name": "maru_batu_ts",
+  "name": "marubatu",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "lib/board.js",
   "repository": "https://github.com/ririko25/maru_batu_ts.git",
-  "author": "ririko <ririkokanikama25@yahoo.co.jp>",
+  "author": "ririko <ririmohu25@gmail.com>",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "jest --coverage",
-    "start": "nodemon -w src -e ts -x \"ts-node src/server/index.ts\""
+    "start": "nodemon -w src -e ts -x \"ts-node src/server/index.ts\"",
+    "build": "npm run clean && tsc",
+    "clean": "rimraf lib"
   },
   "dependencies": {
     "express": "^4.16.4",
@@ -21,6 +26,7 @@
     "@types/jest": "^23.3.5",
     "@types/node": "^11.13.0",
     "jest": "^23.6.0",
+    "rimraf": "^2.6.3",
     "ts-jest": "^23.10.4",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
